@@ -1,0 +1,26 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "Model: Web Login Application",
+    "owner": "Development and Security Team",
+    "description": "The system modeled is a Web Login Application that allows users to authenticate themselves to access a service. The login page consists of a web form where the user enters a username and password. These credentials are transmitted to an authentication server, which validates them against a hashed password database. Upon successful authentication, the system creates a session token and grants the user access to protected resources.\n\nThe overall architecture includes a web client (browser), a web server hosting the login page and handling HTTP(S) requests, an authentication server performing credential verification, a database server storing hashed passwords and user details.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "Web Login Application Architecture",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.5.0",
+        "cells": []
+      }
+    ],
+    "diagramTop": 2,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
