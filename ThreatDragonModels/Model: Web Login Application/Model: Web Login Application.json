@@ -1,26 +1,91 @@
 {
-  "version": "2.5.0",
-  "summary": {
-    "title": "Model: Web Login Application",
-    "owner": "Development and Security Team",
-    "description": "The system modeled is a Web Login Application that allows users to authenticate themselves to access a service. The login page consists of a web form where the user enters a username and password. These credentials are transmitted to an authentication server, which validates them against a hashed password database. Upon successful authentication, the system creates a session token and grants the user access to protected resources.\n\nThe overall architecture includes a web client (browser), a web server hosting the login page and handling HTTP(S) requests, an authentication server performing credential verification, a database server storing hashed passwords and user details.",
-    "id": 0
-  },
-  "detail": {
-    "contributors": [],
-    "diagrams": [
-      {
-        "id": 0,
-        "title": "Web Login Application Architecture",
-        "diagramType": "STRIDE",
-        "placeholder": "New STRIDE diagram description",
-        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "version": "2.5.0",
-        "cells": []
-      }
+  "summary": "Web Login Application Threat Model",
+  "detail": "DFD with STRIDE threats for OWASP Threat Dragon.",
+  "threats": [
+    {
+      "id": "T-S1",
+      "title": "Credential Spoofing",
+      "category": "Spoofing",
+      "status": "Open",
+      "severity": "High",
+      "target": "Web Server",
+      "description": "Attacker attempts to impersonate a valid user by guessing or brute-forcing credentials.",
+      "mitigation": "Implement account lockout, CAPTCHA, and multi-factor authentication."
+    },
+    {
+      "id": "T-T1",
+      "title": "Tampering with Login Request",
+      "category": "Tampering",
+      "status": "Open",
+      "severity": "High",
+      "target": "Data Flow F1",
+      "description": "Credentials could be altered in transit if HTTPS is not enforced.",
+      "mitigation": "Use HTTPS with HSTS to ensure data integrity."
+    },
+    {
+      "id": "T-R1",
+      "title": "Repudiation of Login Attempts",
+      "category": "Repudiation",
+      "status": "Open",
+      "severity": "Medium",
+      "target": "Authentication Server",
+      "description": "Users could deny performing a login attempt if audit trails are weak.",
+      "mitigation": "Maintain tamper-proof logging and timestamped records."
+    },
+    {
+      "id": "T-I1",
+      "title": "Information Disclosure via Database Leak",
+      "category": "Information Disclosure",
+      "status": "Open",
+      "severity": "High",
+      "target": "User Database",
+      "description": "Compromise of database could expose hashed passwords or sensitive user data.",
+      "mitigation": "Use salted bcrypt or Argon2 hashing and secure database encryption."
+    },
+    {
+      "id": "T-D1",
+      "title": "Denial of Service on Web Server",
+      "category": "Denial of Service",
+      "status": "Open",
+      "severity": "Medium",
+      "target": "Web Server",
+      "description": "Attackers may flood the login endpoint with requests, exhausting resources.",
+      "mitigation": "Rate limiting, IP throttling, and DDoS protection."
+    },
+    {
+      "id": "T-E1",
+      "title": "JWT or Session Token Tampering",
+      "category": "Elevation of Privilege",
+      "status": "Open",
+      "severity": "High",
+      "target": "Authentication Server",
+      "description": "An attacker modifies a session token to gain higher privileges.",
+      "mitigation": "Use signed and verified JWTs with short expiration times and secure cookie flags."
+    }
+  ],
+  "stencil": {
+    "processes": [
+      {"id": "P1", "name": "Web Server", "description": "Hosts login page and forwards requests to authentication server"},
+      {"id": "P2", "name": "Authentication Server", "description": "Verifies user credentials and issues session tokens"}
     ],
-    "diagramTop": 2,
-    "reviewer": "",
-    "threatTop": 0
+    "dataStores": [
+      {"id": "D1", "name": "User Database", "description": "Stores hashed passwords and user data"}
+    ],
+    "externalEntities": [
+      {"id": "E1", "name": "User (Browser)", "description": "Submits login credentials via HTTPS form"}
+    ],
+    "dataFlows": [
+      {"id": "F1", "from": "E1", "to": "P1", "name": "Submit Credentials", "protocol": "HTTPS", "encrypted": true},
+      {"id": "F2", "from": "P1", "to": "P2", "name": "Forward Credentials", "protocol": "HTTPS / REST API", "encrypted": true},
+      {"id": "F3", "from": "P2", "to": "D1", "name": "Query User Record", "protocol": "SQL over TLS", "encrypted": true},
+      {"id": "F4", "from": "D1", "to": "P2", "name": "Return Hashed Password", "protocol": "SQL over TLS", "encrypted": true},
+      {"id": "F5", "from": "P2", "to": "P1", "name": "Auth Result (Success/Failure)", "protocol": "HTTPS", "encrypted": true},
+      {"id": "F6", "from": "P1", "to": "E1", "name": "Session Token / Response", "protocol": "HTTPS", "encrypted": true}
+    ],
+    "trustBoundaries": [
+      {"id": "T1", "name": "Public to Web Server Boundary", "description": "Separates untrusted user input from application zone", "includes": ["E1", "P1"]},
+      {"id": "T2", "name": "Web to Auth Boundary", "description": "Separates DMZ and internal authentication zone", "includes": ["P1", "P2"]},
+      {"id": "T3", "name": "Auth to Database Boundary", "description": "Separates authentication logic and data storage zone", "includes": ["P2", "D1"]}
+    ]
   }
 }
