@@ -125,7 +125,7 @@
             "data": {
               "type": "tm.Actor",
               "name": "User",
-              "description": "",
+              "description": "interacts via the web interface.",
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -242,7 +242,7 @@
             "data": {
               "type": "tm.Process",
               "name": "Web Server",
-              "description": "",
+              "description": "hosts the login form and processes requests",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -362,7 +362,7 @@
             "data": {
               "type": "tm.Process",
               "name": "Authentication Server",
-              "description": "",
+              "description": "validates credentials",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -485,7 +485,7 @@
             "data": {
               "type": "tm.Store",
               "name": "Database",
-              "description": "",
+              "description": " stores and retrieves hashed credentials",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
