@@ -518,20 +518,20 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Login details (2)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "Login details (2)"
             ],
             "id": "480e61a8-338f-4fda-a401-5bbbd54ef81e",
             "source": {
@@ -546,6 +546,10 @@
               {
                 "x": 380,
                 "y": 370
+              },
+              {
+                "x": 380,
+                "y": 400
               }
             ]
           },
@@ -569,20 +573,20 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
+              "name": "Authentication result (5)",
+              "description": "Success/Failure and session token if valid",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "isBidirectional": false,
-              "isEncrypted": false,
+              "isEncrypted": true,
               "isPublicNetwork": false,
-              "protocol": "",
+              "protocol": "HTTPS",
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "Authentication result (5)"
             ],
             "id": "c139f60a-b2d6-4e1e-bfa5-db7cadb2b080",
             "source": {
@@ -594,6 +598,10 @@
               "y": 240
             },
             "vertices": [
+              {
+                "x": 610,
+                "y": 430
+              },
               {
                 "x": 630,
                 "y": 370
@@ -620,7 +628,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "User record-hashed password (4)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -633,7 +641,7 @@
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "User record-hashed password (4)"
             ],
             "id": "4435bf29-85cd-4ba7-b671-1fc06df9cfee",
             "source": {
@@ -671,7 +679,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Username, Password (1)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -684,7 +692,7 @@
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "Username, Password (1)"
             ],
             "id": "6dc096e0-018d-4079-8df9-762525af1da8",
             "source": {
@@ -702,7 +710,7 @@
               },
               {
                 "x": 320,
-                "y": 130
+                "y": 110
               },
               {
                 "x": 380,
@@ -730,20 +738,20 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Query (3)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "isBidirectional": false,
-              "isEncrypted": false,
+              "isEncrypted": true,
               "isPublicNetwork": false,
-              "protocol": "",
+              "protocol": "DB Protocol",
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "Query (3)"
             ],
             "id": "0f379a02-8591-4825-94a3-6a59dedefba8",
             "source": {
@@ -756,7 +764,11 @@
             },
             "vertices": [
               {
-                "x": 880,
+                "x": 780,
+                "y": 690
+              },
+              {
+                "x": 840,
                 "y": 710
               },
               {
@@ -789,7 +801,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Response Page (6)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -802,12 +814,12 @@
               "threats": []
             },
             "labels": [
-              "Data Flow"
+              "Response Page (6)"
             ],
             "id": "2659cf7d-3217-4709-9244-3180de9277e8",
             "source": {
-              "x": 425,
-              "y": 205
+              "x": 445,
+              "y": 245
             },
             "target": {
               "cell": "2885c8e7-980b-465a-9a60-e38cd50487f2",
@@ -815,8 +827,28 @@
             },
             "vertices": [
               {
-                "x": 280,
-                "y": 240
+                "x": 420,
+                "y": 245
+              },
+              {
+                "x": 350,
+                "y": 270
+              },
+              {
+                "x": 320,
+                "y": 270
+              },
+              {
+                "x": 300,
+                "y": 280
+              },
+              {
+                "x": 230,
+                "y": 280
+              },
+              {
+                "x": 160,
+                "y": 250
               }
             ]
           },
