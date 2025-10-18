@@ -19,6 +19,84 @@
         "cells": [
           {
             "position": {
+              "x": 14.9999999999999,
+              "y": 75.00000000000017
+            },
+            "size": {
+              "width": 150,
+              "height": 160
+            },
+            "attrs": {
+              "label": {
+                "text": "Public Zone"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "3c8e9a36-e2a7-4591-a2a3-3e74fa9b0dbf",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Public Zone",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 398.9999999999998,
+              "y": 55.00000000000034
+            },
+            "size": {
+              "width": 180,
+              "height": 220
+            },
+            "attrs": {
+              "label": {
+                "text": "DMZ"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "5e98f4c9-db87-405e-8565-91194dd0cb87",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "DMZ",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 159.99999999999955,
+              "y": 459.9999999999991
+            },
+            "size": {
+              "width": 1190,
+              "height": 270
+            },
+            "attrs": {
+              "label": {
+                "text": "Internal Network"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "848b94ee-b7c9-4a7f-a72c-2b78ff31d832",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Internal Network",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
               "x": 30,
               "y": 150
             },
@@ -38,6 +116,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +200,6 @@
               ]
             },
             "id": "2885c8e7-980b-465a-9a60-e38cd50487f2",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "User",
@@ -155,6 +233,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -238,7 +317,6 @@
               ]
             },
             "id": "12e4407d-5447-4a6a-a9b8-7e20affe4560",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "Web Server",
@@ -275,6 +353,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -358,7 +437,6 @@
               ]
             },
             "id": "69f55605-9bcf-4c39-be85-7ab3bbc67321",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "Authentication Server",
@@ -398,6 +476,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -481,7 +560,6 @@
               ]
             },
             "id": "4bbd4eee-54d5-437f-8e25-37d53c5e6d72",
-            "zIndex": 4,
             "data": {
               "type": "tm.Store",
               "name": "Database",
@@ -879,39 +957,13 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
-              "name": "Trust Boundary",
+              "name": "DMZ to internal",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
             },
             "labels": [
-              "Trust Boundary"
-            ],
-            "id": "680e28d1-115d-4b8a-9ca7-0a027e4148fb",
-            "source": {
-              "x": 143,
-              "y": 175
-            },
-            "target": {
-              "cell": "12e4407d-5447-4a6a-a9b8-7e20affe4560",
-              "port": "30d86145-0372-4d25-9c19-9d9c02f39afd"
-            }
-          },
-          {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "Trust Boundary",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "labels": [
-              "Trust Boundary"
+              "DMZ to internal"
             ],
             "id": "08cbadfb-80c6-4951-979c-9d20d68eac0d",
             "source": {
@@ -931,13 +983,13 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
-              "name": "Trust Boundary",
+              "name": "Authentication to Data Zone",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
             },
             "labels": [
-              "Trust Boundary"
+              "Authentication to Data Zone"
             ],
             "id": "afbefe05-a50a-420d-b1db-9c609baba41c",
             "source": {
@@ -947,7 +999,8 @@
             "target": {
               "cell": "4bbd4eee-54d5-437f-8e25-37d53c5e6d72",
               "port": "62bbe8c4-7889-4f94-b745-9cbe64e681e4"
-            }
+            },
+            "vertices": []
           }
         ]
       }
