@@ -161,8 +161,8 @@
                 "text": "User"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -259,9 +259,27 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "a13f10d9-c0b1-4662-b9c1-e07d9e7a6cff",
+                  "title": "Credential brute-force",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Attacker tries to impersonate a legitimate user",
+                  "mitigation": "Account lockout",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "1"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -278,8 +296,8 @@
                 "text": "Web Server"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -376,25 +394,12 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
               "threats": [
-                {
-                  "id": "a8f23234-e01c-49aa-9e11-51438dcf146b",
-                  "title": "Brute-force login",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Spoofing",
-                  "description": "Attacker tries to impersonate a legitimate user",
-                  "mitigation": "Account lockout",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 2,
-                  "score": "5"
-                },
                 {
                   "id": "4de29559-2736-4e8a-af68-747ba21407dd",
                   "title": "Flooding Brute-force attempts ",
@@ -410,7 +415,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -1208,6 +1213,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 7
+    "threatTop": 8
   }
 }
