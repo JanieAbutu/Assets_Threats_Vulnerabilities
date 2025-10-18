@@ -342,6 +342,19 @@
                   "new": false,
                   "number": 2,
                   "score": "5"
+                },
+                {
+                  "id": "4de29559-2736-4e8a-af68-747ba21407dd",
+                  "title": "Flooding Brute-force attempts ",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Denial of service",
+                  "description": "Flooding login requests to exhaust resources",
+                  "mitigation": "Implement rate limiting, traffic filtering, and cloud-based DDoS protection.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "1"
                 }
               ],
               "threatFrequency": {
@@ -349,16 +362,9 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 0,
+                "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -491,6 +497,19 @@
                   "new": false,
                   "number": 4,
                   "score": "3"
+                },
+                {
+                  "id": "94dc1f03-1ccb-45af-b822-e57fd8be9d62",
+                  "title": "Session token tampering",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Elevation of privilege",
+                  "description": "Attacker gains admin privileges via session hijack",
+                  "mitigation": "Use signed and verified tokens and short expiration times.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "1"
                 }
               ],
               "threatFrequency": {
@@ -499,7 +518,7 @@
                 "repudiation": 1,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 0
+                "elevationOfPrivilege": 1
               }
             }
           },
@@ -1137,6 +1156,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 5
+    "threatTop": 7
   }
 }
