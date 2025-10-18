@@ -226,8 +226,8 @@
                 "text": "Web Server"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -324,12 +324,41 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "a8f23234-e01c-49aa-9e11-51438dcf146b",
+                  "title": "Brute-force login",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Attacker tries to impersonate a legitimate user",
+                  "mitigation": "Account lockout",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "5"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -449,7 +478,29 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "85b60421-cb72-418e-93b7-b54dc3ba0d47",
+                  "title": "Login repudiation",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "User denies having logged in",
+                  "mitigation": "Implement centralized logging with timestamps",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "3"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -571,9 +622,29 @@
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
-              "storesCredentials": false,
+              "storesCredentials": true,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "aba9d9d4-521d-499a-8e66-d4c4c42542f9",
+                  "title": "SQL injection",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "Compromise of database could expose hashed passwords or sensitive user data.",
+                  "mitigation": "Use parameterized queries",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "1"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -597,7 +668,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Login details (2)",
-              "description": "",
+              "description": "Username and Password",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -606,7 +677,26 @@
               "isEncrypted": true,
               "isPublicNetwork": true,
               "protocol": "HTTPS",
-              "threats": []
+              "threats": [
+                {
+                  "id": "8be86f05-6a1b-4aab-9bb2-6f5ce778152b",
+                  "title": "Altering data in transit",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Tampering",
+                  "description": "Altering data in transit",
+                  "mitigation": "Enforce HTTPS with HSTS",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "1"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Login details (2)"
@@ -626,8 +716,16 @@
                 "y": 370
               },
               {
+                "x": 360,
+                "y": 370
+              },
+              {
                 "x": 380,
                 "y": 400
+              },
+              {
+                "x": 380,
+                "y": 420
               }
             ]
           },
@@ -1039,6 +1137,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 1
+    "threatTop": 5
   }
 }
