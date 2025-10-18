@@ -1001,6 +1001,38 @@
               "port": "62bbe8c4-7889-4f94-b745-9cbe64e681e4"
             },
             "vertices": []
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Public to DMZ",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Public to DMZ"
+            ],
+            "id": "cac10cb9-af76-40d1-9c6b-7f990071eb73",
+            "source": {
+              "x": 143,
+              "y": 175
+            },
+            "target": {
+              "cell": "12e4407d-5447-4a6a-a9b8-7e20affe4560",
+              "port": "30d86145-0372-4d25-9c19-9d9c02f39afd"
+            },
+            "vertices": [
+              {
+                "x": 360,
+                "y": 175
+              }
+            ]
           }
         ]
       }
