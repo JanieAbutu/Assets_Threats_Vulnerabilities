@@ -97,6 +97,58 @@
           },
           {
             "position": {
+              "x": 350.9999999999998,
+              "y": 500.0000000000002
+            },
+            "size": {
+              "width": 280,
+              "height": 200
+            },
+            "attrs": {
+              "label": {
+                "text": "App zone"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "6501f3bc-bd1f-4b50-8f80-e81e172ef50b",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "App zone",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 1015,
+              "y": 500.00000000000045
+            },
+            "size": {
+              "width": 280,
+              "height": 180
+            },
+            "attrs": {
+              "label": {
+                "text": "Data zone"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "445444b3-2ce3-4c73-a7ec-715c026c81b7",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Data zone",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
               "x": 30,
               "y": 150
             },
