@@ -1,0 +1,27 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "Banking API",
+    "owner": "Development and Security Team",
+    "description": "The system modeled is a Banking RESTful API that enables clients (mobile apps and third-party fintech partners) to perform banking operations such as checking balances, initiating transfers, and retrieving statements. All communication occurs via HTTPS, with clients authenticated through tokens or certificates. The API interacts with internal banking systems like the account management system, transaction engine, and database.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "Banking API",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.5.0",
+        "cells": [],
+        "description": "Banking API"
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
