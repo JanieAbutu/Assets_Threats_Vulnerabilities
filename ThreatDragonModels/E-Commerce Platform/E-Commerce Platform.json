@@ -97,6 +97,32 @@
           },
           {
             "position": {
+              "x": 700,
+              "y": 90.00000000000026
+            },
+            "size": {
+              "width": 230,
+              "height": 190
+            },
+            "attrs": {
+              "label": {
+                "text": "Data zone"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "142c52b3-18a5-4f2d-853a-55e4fdb3fbf4",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Data zone",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
               "x": 70,
               "y": 200
             },
@@ -209,7 +235,25 @@
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "d368fc45-d3a9-4c04-9541-376fbae9c06c",
+                  "title": "Credentials spoofing",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Spoofing",
+                  "description": "Attackers impersonate legitimate clients by stealing credentials.",
+                  "mitigation": "Implement MFA, strong password policies, secure cookie/session handling",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": "1"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -331,8 +375,8 @@
           },
           {
             "position": {
-              "x": 410,
-              "y": 110
+              "x": 370,
+              "y": 115.00000000000026
             },
             "size": {
               "width": 170,
@@ -446,7 +490,29 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "1932791e-a8df-4b3d-bf55-e9f281a195bd",
+                  "title": "Modifying cart value /amounts in transit.",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Tampering",
+                  "description": "Malicious user alters cart data or prices in transit",
+                  "mitigation": "Use HTTPS, input validation, server-side checks for price integrity",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "1"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -703,8 +769,8 @@
                 "text": "Product Catalog"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -801,12 +867,41 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "71a5b2c4-c968-4271-a296-ec784711b686",
+                  "title": "DDoS on Product catalog",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Flooding Product catalog with repeated requests.",
+                  "mitigation": "Implement rate limiting, and API Gateway throttling.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "4"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 2,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -976,51 +1071,6 @@
             "target": {
               "cell": "6bbea913-42e0-401c-83db-ee522bf4c432",
               "port": "a89d6018-6cba-417b-b8e2-885bc04d8c80"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Stores order",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": true,
-              "isPublicNetwork": false,
-              "protocol": "HTTPS",
-              "threats": []
-            },
-            "labels": [
-              "Stores order"
-            ],
-            "id": "7ddf0a08-21b0-407b-b9c8-29ef0f61071d",
-            "source": {
-              "x": 560,
-              "y": 180
-            },
-            "target": {
-              "cell": "1cc9b43a-bf86-48cf-990b-86472225b134",
-              "port": "8d6bc86d-1786-420d-8b6a-588887bfd0c4"
             }
           },
           {
@@ -1314,6 +1364,51 @@
             }
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Stores order",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "HTTPS",
+              "threats": []
+            },
+            "labels": [
+              "Stores order"
+            ],
+            "id": "7ddf0a08-21b0-407b-b9c8-29ef0f61071d",
+            "source": {
+              "cell": "fc5e249a-8e3c-4cb1-9a51-27321cd17857",
+              "port": "696135f2-1cab-4f6d-b963-1b3c38f47da1"
+            },
+            "target": {
+              "cell": "1cc9b43a-bf86-48cf-990b-86472225b134",
+              "port": "8d6bc86d-1786-420d-8b6a-588887bfd0c4"
+            }
+          },
+          {
             "position": {
               "x": 1020,
               "y": 617
@@ -1436,6 +1531,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 3
   }
 }
