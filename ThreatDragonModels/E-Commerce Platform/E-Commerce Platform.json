@@ -76,7 +76,7 @@
             },
             "size": {
               "width": 210,
-              "height": 210
+              "height": 350
             },
             "attrs": {
               "label": {
@@ -451,8 +451,8 @@
           },
           {
             "position": {
-              "x": 340,
-              "y": 460
+              "x": 380,
+              "y": 490
             },
             "size": {
               "width": 150,
@@ -934,123 +934,6 @@
             }
           },
           {
-            "position": {
-              "x": 360,
-              "y": 700.0000000000001
-            },
-            "size": {
-              "width": 230,
-              "height": 60
-            },
-            "attrs": {
-              "text": {
-                "text": "Delivery Service"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
-                "strokeDasharray": "4 3"
-              }
-            },
-            "visible": true,
-            "shape": "actor",
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
-              "items": [
-                {
-                  "group": "top",
-                  "id": "19b2e7f9-962d-45a6-b51e-cf8d97d7ebfc"
-                },
-                {
-                  "group": "right",
-                  "id": "149ba255-b23f-4456-abe8-7f751f73a223"
-                },
-                {
-                  "group": "bottom",
-                  "id": "43fb96e1-173c-4a45-b624-93a902edd391"
-                },
-                {
-                  "group": "left",
-                  "id": "4275fd74-8720-4628-98a7-4b842a98c314"
-                }
-              ]
-            },
-            "id": "9c654349-108b-445f-90b6-8e541b7a4983",
-            "zIndex": 9,
-            "data": {
-              "type": "tm.Actor",
-              "name": "Delivery Service",
-              "description": "",
-              "isTrustBoundary": false,
-              "outOfScope": true,
-              "reasonOutOfScope": "Not within internal systems or processes",
-              "hasOpenThreats": false,
-              "providesAuthentication": false,
-              "threats": []
-            }
-          },
-          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -1315,96 +1198,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Delivery notification",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Delivery notification"
-            ],
-            "id": "1dbc699d-f603-4755-96c3-9630237e867f",
-            "source": {
-              "x": 230,
-              "y": 550
-            },
-            "target": {
-              "cell": "69399f96-9a07-42ab-b1bb-1e32edecdc12",
-              "port": "a89d6018-6cba-417b-b8e2-885bc04d8c80"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Delivery notification",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": true,
-              "isPublicNetwork": true,
-              "protocol": "HTTPS",
-              "threats": []
-            },
-            "labels": [
-              "Delivery notification"
-            ],
-            "id": "91b30232-111f-40e4-9a41-2878ee59d3d5",
-            "source": {
-              "x": 415,
-              "y": 600
-            },
-            "target": {
-              "x": 515,
-              "y": 700
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Handles payment",
               "description": "",
               "outOfScope": false,
@@ -1428,6 +1221,213 @@
             "target": {
               "cell": "78b04c08-e73e-4574-ab33-ab54fb9f2502",
               "port": "4275fd74-8720-4628-98a7-4b842a98c314"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Delivery notification",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Delivery notification"
+            ],
+            "id": "ea2ca04e-af82-4093-bc64-9a3e29bd42a1",
+            "source": {
+              "x": 480,
+              "y": 550
+            },
+            "target": {
+              "cell": "84802c33-8092-4c41-ba90-fced265e5791",
+              "port": "4275fd74-8720-4628-98a7-4b842a98c314"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Delivery notification",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Delivery notification"
+            ],
+            "id": "1dbc699d-f603-4755-96c3-9630237e867f",
+            "source": {
+              "cell": "6bbea913-42e0-401c-83db-ee522bf4c432",
+              "port": "696135f2-1cab-4f6d-b963-1b3c38f47da1"
+            },
+            "target": {
+              "cell": "69399f96-9a07-42ab-b1bb-1e32edecdc12",
+              "port": "a89d6018-6cba-417b-b8e2-885bc04d8c80"
+            }
+          },
+          {
+            "position": {
+              "x": 1020,
+              "y": 617
+            },
+            "size": {
+              "width": 160,
+              "height": 90
+            },
+            "attrs": {
+              "text": {
+                "text": "Delivery service"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "19b2e7f9-962d-45a6-b51e-cf8d97d7ebfc"
+                },
+                {
+                  "group": "right",
+                  "id": "149ba255-b23f-4456-abe8-7f751f73a223"
+                },
+                {
+                  "group": "bottom",
+                  "id": "43fb96e1-173c-4a45-b624-93a902edd391"
+                },
+                {
+                  "group": "left",
+                  "id": "4275fd74-8720-4628-98a7-4b842a98c314"
+                }
+              ]
+            },
+            "id": "84802c33-8092-4c41-ba90-fced265e5791",
+            "zIndex": 11,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Delivery service",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
             }
           }
         ],
