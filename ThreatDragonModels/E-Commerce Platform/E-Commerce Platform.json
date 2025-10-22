@@ -67,13 +67,6 @@
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -656,8 +649,8 @@
                 "text": "Payment System"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -754,12 +747,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "74249f85-3d20-4f1c-847c-30c1013babdf",
+                  "title": "Lack of sufficient logging for non-repudiation.",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "User denies having made a purchase due to lack of audit trails.",
+                  "mitigation": "Enable transaction logging and user activity trails",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "5"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -892,6 +907,19 @@
                   "new": false,
                   "number": 2,
                   "score": "4"
+                },
+                {
+                  "id": "e42cd2d2-b32f-43d6-acad-452155e9a311",
+                  "title": "Unauthorized use of admin account",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Elevation of privilege",
+                  "description": "Exploiting weak authorization to gain admin-level access.",
+                  "mitigation": "Role-based access control (RBAC), principle of least privilege",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "1"
                 }
               ],
               "threatFrequency": {
@@ -900,8 +928,15 @@
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 2,
-                "elevationOfPrivilege": 0
+                "elevationOfPrivilege": 1
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1551,6 +1586,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 4
+    "threatTop": 6
   }
 }
