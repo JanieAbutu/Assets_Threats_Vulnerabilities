@@ -67,6 +67,13 @@
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -895,13 +902,6 @@
                 "denialOfService": 2,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1025,7 +1025,27 @@
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "722ce33c-7f1e-4936-9098-83d3633f8c31",
+                  "title": "Sensitive information leaked",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "Sensitive data (email, card info) exposed via misconfigured database.",
+                  "mitigation": "Enforce TLS, encrypt sensitive data at rest, avoid verbose API errors",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "1"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -1531,6 +1551,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 3
+    "threatTop": 4
   }
 }
